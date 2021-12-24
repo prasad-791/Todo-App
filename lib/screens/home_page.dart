@@ -39,6 +39,8 @@ class _HomePageState extends State<HomePage> {
 
   getCustomAppBar(){
     return AppBar(
+      elevation: 0,
+      backgroundColor: context.theme.backgroundColor,
       leading: GestureDetector(
         onTap:(){
           ThemeServices().switchTheme();
@@ -46,12 +48,20 @@ class _HomePageState extends State<HomePage> {
             title: "Theme Changed",
             body: Get.isDarkMode ? "Activated Light Theme" : "Activated Dark Theme",
           );
-          notifyHelper.scheduledNotification();
+          // notifyHelper.scheduledNotification();
         },
-        child: const Icon(Icons.nightlight_round,size: 20,),
+        child: Icon(
+          Get.isDarkMode?Icons.wb_sunny_rounded:Icons.nightlight_round,
+          size: 20,
+          color: Get.isDarkMode?Colors.white:Colors.black,
+        ),
       ),
       actions: const [
-        Icon(Icons.person,size: 20,),
+        CircleAvatar(
+          backgroundImage: AssetImage(
+              'assets/images/avatar.png'
+          ),
+        ),
         SizedBox(width: 20,),
       ],
     );

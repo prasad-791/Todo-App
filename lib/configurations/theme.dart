@@ -14,7 +14,7 @@ Color darkHeaderClr = const Color(0xff424242);
 class Themes{
 
   static final lightMode = ThemeData(
-
+    backgroundColor: white,
     colorScheme: const ColorScheme(
       primary: primaryClr,
       brightness: Brightness.light,
@@ -36,6 +36,8 @@ class Themes{
   );
 
   static final darkMode = ThemeData(
+
+    backgroundColor: darkGreyClr,
 
     colorScheme: const ColorScheme(
       primary: darkGreyClr,
